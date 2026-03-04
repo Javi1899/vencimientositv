@@ -275,9 +275,22 @@
 
   .table-wrapper {
     border: 1px solid var(--border);
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: visible;
     background: var(--panel);
     position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+  .table-wrapper::-webkit-scrollbar-track {
+    background: rgba(0,240,255,0.05);
+  }
+  .table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--cyan-dim);
+    border-radius: 0;
   }
 
   .table-wrapper::before {
@@ -290,6 +303,7 @@
 
   table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
     font-size: 0.82rem;
   }
